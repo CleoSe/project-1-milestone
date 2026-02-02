@@ -1,0 +1,45 @@
+.header h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th {
+    border: 1px solid #dddddd;
+    font-size: 25px;
+    background-color: grey;
+    text-align: center;
+    padding: 8px;
+    
+    }
+
+
+    a {
+  text-decoration: none;
+}
+a:link{
+    color: black;
+    background-color: transparent;
+}
+a:visited{
+    color: black;
+    background-color: transparent;
+}
+a:active{
+    color: red;
+    background-color: transparent;
+    }
