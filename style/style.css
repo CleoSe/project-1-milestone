@@ -43,3 +43,7 @@ a:active{
     color: red;
     background-color: transparent;
     }
+
+.location{
+    display: flex;
+}
