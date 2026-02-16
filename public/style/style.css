@@ -1,0 +1,86 @@
+.header h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th {
+    border: 2px solid black;
+    font-size: 25px;
+    background-color: grey;
+    text-align: center;
+    padding: 6px;
+    
+    }
+
+
+    a {
+  text-decoration: none;
+}
+a:link{
+    color: black;
+    background-color: transparent;
+}
+a:visited{
+    color: black;
+    background-color: transparent;
+}
+a:active{
+    color: red;
+    background-color: transparent;
+    }
+
+.location{
+    display: flex;
+}
+
+.ps-7{
+    padding-left: 9rem !important;
+}
+
+.hidden{
+        display: none;
+        
+    }
+
+#contactForm {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#contactForm.active {
+    max-height: 600px; /* set large enough for your form */
+    opacity: 1;
+}
+
+.rotate-90 {
+  display: inline-block; /* Required for rotation to work on inline elements */
+  transform: rotate(90deg);
+  transition: 0.3s;
+}
+
+.rotate-180{
+    display: inline-block; /* Required for rotation to work on inline elements */
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
+#submitForm{
+    color: grey;
+}

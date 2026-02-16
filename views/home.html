@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <style>
+        .custom-btn{
+    background-color: black;
+    border-color: grey;
+    color: black;
+    width: 200px;
+    }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>S&L Garage Door</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <link rel="stylesheet" type = "text/css" href="../style/style.css">
+        
+    </head>
+
+    <body>
+        <div class = "container">
+            <a href = "home.html">
+                <img src = "../images/SL_Logo.jpg" width = "200" height = "150" class = "position-absolute top-0 start-0">
+            </a>
+            <p class = "pe-5 py-3 text-end fs-4 fw-medium">
+                Hours Availabe: 10:00-8:00
+            </p>
+            <p class = "pe-2 py-auto text-end fs-4 fw-medium">
+                Phone Number: 765-282-1020
+            </p>
+        </div>
+        <!--Navbar-->
+        <div class="container-fluid py-3">
+            <table>
+                <th><a class = "nav-link" href = home.html style="color: red;">Home</a></th>
+                <th><a class = "nav-link" href = services.html>Services</a></th>
+                <th><a class = "nav-link" href = contact.html>Contact</a></th>
+                <th><a class = "nav-link" href = resources.html>Resources</a></th>
+            </table>
+        </div>
+
+        <!--Images Div-->
+        <div>
+            
+            <!--Contact Us Button-->
+            <div class="container d-flex justify-content-end align-items-center">
+                <button type = "button" id = "formButton" class="btn custom-btn rounded-pill shadow-sm border position-relative text-center" style= "background-color: grey; color: black;" onclick=showContact()>
+                    <i id = "arrow" class="bi bi-triangle-fill me-2 rotate-90 position-absolute start-0 ms-4"></i>Contact Us!</button>
+                    
+                
+            </div>
+            <div id = "contactForm" class = "ms-auto me-4 w-25 h-50 p-3 " style = "background-color: red;">
+                
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "First Name*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "Last Name*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "Email*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "Address*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1 pb-5" placeholder = "How can we help?">
+                <button type = "submit" id = "sumbitForm" class="form-control ms-auto h-25 mb-1" style= "background-color: lightgrey; color: black; outline-color: lightgrey;">Submit Form</button>
+
+            </div>
+        </div>
+
+        <!--About S&L Garage Div-->
+        <div>
+
+        </div>
+
+        <!--Reviews Div-->
+        <div id = "reviewsDiv" class = "container d-flex flex-column position-relative" style = "width: 500px; height: 150px; background-color: maroon;">
+            <p class = "mx-auto text-center fs-5" style = "color: black; ">Reviews</p>
+            <div class = "d-flex align-items-center">
+                <p id = "reviews" class = "p-flex flex-grow-1 mb-0 text-center" style="color: black;"></p>
+                </div>
+            <button type="button" onclick = nextReview(); class = " ps-1 btn btn-primary position-absolute end-0 top-45" style = "border-color: transparent; background-color: transparent; color: black;">
+                <i class="bi bi-arrow-right"></i> 
+            </button>
+            <button type="button" onclick = prevReview(); class = "pe-1 btn btn-primary position-absolute start-0 top-45" style = "border-color: transparent; background-color: transparent; color: black;">
+                <i class="bi bi-arrow-left"></i> 
+            </button>
+        </div>
+        <!--Footer-->
+        <footer class = "mt-auto border-top border-dark py-3 d-flex justify-content-center align-items-center">
+            <div class = "d-flex p-1 pe-5">
+            <a href = "home.html">
+                <img src = "../images/SL_Logo.jpg" width = "100" height = "75">
+            </a>
+            <div class = "container">
+                <p class = "pe-5 py-1 fw-medium">Location: Peru, Kokomo, Logansport</p>
+                <p class = "pe-5 fw-medium">Phone Number: 765-282-1020</p>
+                <p class = "text-muted fw-medium">© 2026 Group 5</p>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+
+        //array for reviews
+
+        const reviews = 
+        [
+            "Came out the day I called, in freezing temperature, to fix my door so I could get me car out of the garage - Linda ",
+            "They responded very quickly and got our broken spring repaired as quickly as they could. Very professional and fairly priced. I would definitely recommend their services! - Matt"
+        ]
+
+        let reviewsText = document.getElementById("reviews");
+        let i = 0
+        reviewsText.innerText = reviews[i];
+
+        function nextReview(){
+            i++;
+            if (i > (reviews.length - 1)){
+                i = 0;
+                reviewsText.innerText = reviews[i];
+            } else{
+                reviewsText.innerText = reviews[i];
+
+            }
+
+        }
+
+        function prevReview(){
+            i--;
+            if (i < 0){
+                i = (reviews.length - 1);
+                reviewsText.innerText = reviews[i];
+            } else {
+                reviewsText.innerText = reviews[i];
+            }
+        }
+
+        function showContact(){
+            const form = document.getElementById("contactForm");
+            const arrow = document.getElementById("arrow");
+            form.classList.toggle("active");
+            arrow.classList.toggle("rotate-180");
+        }
+        //script for reviews box
+        //add button to go to next review
+        //should be an arrow that scrolls to the next review
+    </script>
+    

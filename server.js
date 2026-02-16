@@ -5,31 +5,39 @@ const path = require("path");
 const app = express();
 dotenv.config();
 
-// Render provides the PORT via environment variable
-const PORT = process.env.PORT || 8080;
+// set HTTP_PORT
+const HTTP_PORT = process.env.PORT || 8080;
 
-// Serve static files from the "public" folder
+// set static folder
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "views")));
 
-// Serve the HTML file
+
+// home route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "home.html"));
+  res.sendFile(path.join(__dirname, "views", "home.html"));
 });
 
-app.get("/contact", (req, res) =>{
-    res.sendFile(path.join(__dirname, "public", "contact.html"));
-})
+app.get("/resources", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "resources.html"));
+});
 
-app.get("/resources", (req, res) =>{
-    res.sendFile(path.join(__dirname, "public", "resources.html"));
-})
+app.get("/services", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "services.html"));
+});
 
-app.get("/services", (req, res) =>{
-    res.sendFile(path.join(__dirname, "public", "services.html"));
-})
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "contact.html"));
+});
 
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// 404 error handler for undefined routes
+/*
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
+});
+*/
+// setup server
+app.listen(HTTP_PORT, () => {
+  console.log(`App listening on port: ${HTTP_PORT}`);
 });
