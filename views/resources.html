@@ -29,6 +29,28 @@
             </table>
             <!--Navbar-->
         </div>
+        <!--Contact Us Button-->
+        <div>
+            
+            
+            <div class="container d-flex justify-content-end align-items-center">
+                <button type = "button" id = "formButton" class="btn custom-btn rounded-pill shadow-sm border position-relative text-center" style= "background-color: grey; color: black;" onclick=showContact()>
+                    <i id = "arrow" class="bi bi-triangle-fill me-2 rotate-90 position-absolute start-0 ms-4"></i>Contact Us!</button>
+                    
+                
+            </div>
+            <div id = "contactForm" class = "ms-auto me-4 w-25 h-50 p-3 " style = "background-color: red;">
+                
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "First Name*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "Last Name*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "Email*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1" placeholder = "Address*">
+                <input tpye = "text" class ="form-control ms-auto h-25 mb-1 pb-5" placeholder = "How can we help?">
+                <button type = "submit" id = "sumbitForm" class="form-control ms-auto h-25 mb-1" style= "background-color: lightgrey; color: black; outline-color: lightgrey;">Submit Form</button>
+
+            </div>
+        </div>
+
 
         <!--Footer-->
         <footer class = "mt-auto border-top border-dark py-3 d-flex justify-content-center align-items-center">
@@ -44,3 +66,12 @@
         </footer>
 
     </body>
+     <script>
+function showContact(){
+            const form = document.getElementById("contactForm");
+            const arrow = document.getElementById("arrow");
+            form.classList.toggle("active");
+            arrow.classList.toggle("rotate-180");
+        }
+    
+    </script>
