@@ -85,4 +85,15 @@ a:active{
     color: grey;
 }
 
+<<<<<<< HEAD
 
+=======
+.supplier-card{
+    height: 200px;
+    background-color: #f8f9fa;
+    display: flexbox; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+>>>>>>> 3aca191555892674d8d3df5a9e9382603d50fa5f

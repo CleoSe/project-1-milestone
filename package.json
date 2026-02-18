@@ -1,18 +1,26 @@
 {
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1"
-  },
   "name": "project-1-milestone",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/CleoSe/project-1-milestone#readme",
+  "bugs": {
+    "url": "https://github.com/CleoSe/project-1-milestone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CleoSe/project-1-milestone.git"
+  },
+  "license": "ISC",
+  "author": "Owen Shimer",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "Owen Shimer",
-  "license": "ISC",
-  "type": "commonjs"
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  }
 }
