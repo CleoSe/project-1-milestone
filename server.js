@@ -30,6 +30,10 @@ app.get("/contact", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "contact.html"));
 });
 
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "home.html"));
+});
+
 
 // 404 error handler for undefined routes
 /*

@@ -84,3 +84,12 @@ a:active{
 #submitForm{
     color: grey;
 }
+
+.supplier-card{
+    height: 200px;
+    background-color: #f8f9fa;
+    display: flexbox; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
