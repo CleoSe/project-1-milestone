@@ -51,22 +51,40 @@ a:active{
 .ps-7{
     padding-left: 9rem !important;
 }
+.me-6{
+    margin-right: 27rem !important;
+}
 
+.me-button{
+    margin-right: 2.25rem !important;
+}
+
+.mt-7{
+    margin-top: 15rem !important;
+}
 .hidden{
         display: none;
         
     }
 
 #contactForm {
+    position: absolute; /* Pulls it out of the document flow */
+    z-index: 1000;      /* Ensures it stays on top of other text */
+    width: 300px;       /* Give it a fixed width */
+    right: 0;           /* Aligns it to the right of the container */
+    
+    /* Your existing animation code */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.3s ease;
+    background-color: red; 
 }
 
 #contactForm.active {
-    max-height: 600px; /* set large enough for your form */
+    max-height: 600px;
     opacity: 1;
+    padding: 15px; /* Add padding only when active for a cleaner look */
 }
 
 .rotate-90 {
@@ -85,9 +103,7 @@ a:active{
     color: grey;
 }
 
-<<<<<<< HEAD
 
-=======
 .supplier-card{
     height: 200px;
     background-color: #f8f9fa;
@@ -96,4 +112,3 @@ a:active{
     justify-content: center;
     text-align: center;
 }
->>>>>>> 3aca191555892674d8d3df5a9e9382603d50fa5f
