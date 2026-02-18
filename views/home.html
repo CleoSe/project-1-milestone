@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="eng">
     <style>
-        .custom-btn{
-    background-color: black;
-    border-color: grey;
-    color: black;
-    width: 200px;
-    }
+        th:first-child{
+            background-color: #666666;
+        }
     </style>
     <head>
         <meta charset="UTF-8">
@@ -17,22 +14,22 @@
         
     </head>
 
-    <body>
+    <body class = "home-page">
         <div class = "container">
             <a href = "home.html">
-                <img src = "../images/SL_Logo.jpg" width = "200" height = "150" class = "position-absolute top-0 start-0">
+                <img src = "../images/SL_Logo.jpg" width = "15%" height = "20%" class = "position-absolute top-0 start-0">
             </a>
-            <p class = "pe-5 py-3 text-end fs-4 fw-medium">
+            <p class = "me-5 py-3 text-end fs-4 fw-medium">
                 Hours Availabe: 10:00-8:00
             </p>
-            <p class = "pe-2 py-auto text-end fs-4 fw-medium">
+            <p class = "me-2 py-auto text-end fs-4 fw-medium">
                 Phone Number: 765-282-1020
             </p>
         </div>
         <!--Navbar-->
-        <div class="container-fluid py-3">
+        <div class="container-fluid py-2">
             <table>
-                <th><a class = "nav-link" href = home.html style="color: red;">Home</a></th>
+                <th><a class = "nav-link" href = home.html style="color: red; ">Home</a></th>
                 <th><a class = "nav-link" href = services.html>Services</a></th>
                 <th><a class = "nav-link" href = contact.html>Contact</a></th>
                 <th><a class = "nav-link" href = resources.html>Resources</a></th>
@@ -41,7 +38,6 @@
 
         <!--Images Div-->
         <div>
-            
             <!--Contact Us Button-->
             <div class="container d-flex flex-column align-items-end" style="position: relative;">
                 <button type="button" id="formButton" class="btn custom-btn rounded-pill shadow-sm border position-relative text-center me-button" style= "background-color: grey; color: black;" onclick=showContact()>
@@ -57,6 +53,12 @@
                 <button type="submit" class="btn btn-light w-100">Submit</button>
             </div>
         </div>
+
+        <h2 class = "position-absolute ms-middle">About S&L Garage</h2>
+        <div id = "aboutDiv" class="position-absolute ms-about mt-5 shadow-sm" >
+            <p>Paragraph about S&L Garage Door and what they do.</p>
+        </div>
+        <img src = "./images/garageDoor1.jpeg" height = "40%" width="40%" class="mb-5 ms-4 shadow-sm">
         </div>
 
         <!--About S&L Garage Div-->
@@ -133,6 +135,7 @@
             form.classList.toggle("active");
             arrow.classList.toggle("rotate-180");
         }
+        
         //script for reviews box
         //add button to go to next review
         //should be an arrow that scrolls to the next review

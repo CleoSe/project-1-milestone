@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="eng">
         <style>
-        .custom-btn{
-    background-color: black;
-    border-color: grey;
-    color: black;
-    width: 200px;
-    }
+        th:nth-child(2){
+            background-color: #666666;
+        }
     </style>
     <head>
         <meta charset="UTF-8">
@@ -20,7 +17,7 @@
     <body>
         <div class = "container">
             <a href = "home.html">
-                <img src = "../images/SL_Logo.jpg" width = "200" height = "150" class = "position-absolute top-0 start-0">
+                <img src = "../images/SL_Logo.jpg" width = "15%" height = "20%" class = "position-absolute top-0 start-0">
             </a>
             <p class = "pe-5 py-3 text-end fs-4 fw-medium">
                 Hours Availabe: 10:00-8:00
@@ -30,7 +27,7 @@
             </p>
         </div>
         <!--Navbar-->
-        <div class="container-fluid py-3">
+        <div class="container-fluid py-2">
             <table>
                 <th><a href = home.html>Home</a></th>
                 <th><a href = services.html style="color: red;">Services</a></th>
@@ -47,7 +44,7 @@
                     <i id="arrow" class="bi bi-triangle-fill me-2 rotate-90"></i>Contact Us!
                 </button>
     
-                <div id="contactForm" class="shadow-lg mt-5 ms-1">
+                <div id="contactForm" class="shadow-lg mt-5 ms-1 rounded ">
                     <input type="text" class="form-control mb-1" placeholder="First Name*">
                     <input type="text" class="form-control mb-1" placeholder="Last Name*">
                     <input type="text" class="form-control mb-1" placeholder="Email*">
@@ -59,9 +56,14 @@
     </div>
             <div>
                 <img src = "../images/residential.jpg" height="30%" width="30%" class = "position-absolute end-0 me-6">
-                <img src = "../images/commercial.jpg" height="30%" width="30%" class = "position-absolute end-0 me-6 mt-7">
+                <p class = "position-absolute end-0 me-text mt-residential fs-5">Residential Install</p>
+
+                <img src = "../images/commercial.jpg" height="30%" width="30%" class = "position-absolute end-0 me-6 mt-7 pt-1">
+                <p class = "position-absolute end-0 me-commercial mt-commercial fs-5">Commercial Install</p>
+
                 <h2 class = "ps-7 ">Repairs</h2>
                 <p class = "ps-7">Common issues resulting in repairs:</p>
+
 
                 <p class = "ps-7 pb-5">What does S&L offer?</p>
 
@@ -71,7 +73,7 @@
                 <p class = "ps-7 pb-5">What does S&L offer?</p>
 
                 <h2 class = "ps-7">Installation:</h2>
-                <p class = "ps-7">
+                <p class = "ps-7 pb-5">
                     S&L offers both residential and commercial installations.<br>
                     S&L also offers different types of garage door installations. <br>
                     Those include: aluminum, wood, etc...</p>

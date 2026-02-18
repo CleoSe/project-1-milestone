@@ -1,3 +1,9 @@
+#aboutDiv{
+    height: 300px;
+    width: 400px;
+    border: none;
+}
+
 .header h1{
     position: absolute;
     top: 50%;
@@ -20,16 +26,15 @@ table{
 
 th {
     border: 2px solid black;
-    font-size: 25px;
-    background-color: grey;
+    font-size: 28px;
+    background-color: #999999;
     text-align: center;
     padding: 6px;
     
     }
 
-
     a {
-  text-decoration: none;
+    text-decoration: none;
 }
 a:link{
     color: black;
@@ -56,11 +61,42 @@ a:active{
 }
 
 .me-button{
-    margin-right: 2.25rem !important;
+    margin-right: 2.5rem !important;
 }
 
+.mt-residential{
+    margin-top: 13rem;
+}
+
+.mt-commercial{
+    margin-top: 28.5rem;
+}
+
+.me-text{
+    margin-right: 46rem;
+    padding: bottom;
+}
+
+.me-commercial{
+    margin-right: 45.5rem;
+    padding: bottom;
+}
+.custom-btn{
+    background-color: black;
+    border-color: grey;
+    color: black;
+    width: 200px;
+    }
+
 .mt-7{
-    margin-top: 15rem !important;
+    margin-top: 15.5rem !important;
+}
+
+.ms-middle{
+    margin-left: 47rem;
+}
+.ms-about{
+    margin-left: 43rem;
 }
 .hidden{
         display: none;
