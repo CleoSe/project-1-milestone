@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>S&L Contact Submissions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h2>Submitted Contact Forms</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% entries.forEach(function(item) { %>
+                <tr>
+                    <td><%= item.firstName %> <%= item.lastName %></td>
+                    <td><%= item.email %></td>
+                    <td><%= item.address %></td>
+                    <td><%= item.query %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <a href="/home.html" class="btn btn-primary">Back to Home Page</a>
+</body>
+</html>

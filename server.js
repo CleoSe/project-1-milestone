@@ -1,6 +1,8 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
+const fs = require("fs");
+const dataPath = path.join(__dirname, 'data.json');
 
 const app = express();
 dotenv.config();
@@ -11,6 +13,9 @@ const HTTP_PORT = process.env.PORT || 8080;
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.set('view engine', 'ejs');
 
 
 // home route
@@ -42,6 +47,37 @@ app.use((req, res) => {
 });
 */
 // setup server
+
+
+app.post('/submit-form', (req, res) => {
+    const newEntry = req.body; 
+
+    fs.readFile(dataPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error("Error reading file:", err);
+            return res.status(500).send("Server Error");
+        }
+
+        const entries = JSON.parse(data);
+
+        entries.push(newEntry);
+
+        fs.writeFile(dataPath, JSON.stringify(entries, null, 2), (err) => {
+            if (err) return res.status(500).send("Error saving data");
+            
+            res.redirect('/view-data');
+        });
+    });
+});
+
+app.get('/view-data', (req, res) => {
+    fs.readFile(dataPath, 'utf8', (err, data) => {
+        const entries = JSON.parse(data);
+        
+        res.render('display', { entries: entries });
+    });
+});
+
 app.listen(HTTP_PORT, () => {
   console.log(`App listening on port: ${HTTP_PORT}`);
 });
