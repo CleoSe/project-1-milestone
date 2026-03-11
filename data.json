@@ -1,3 +1,30 @@
 [
-  
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "JohnDoe@email.com",
+    "address": "Fake Street USA",
+    "query": "I need a door installed"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Melaine",
+    "email": "JaMe@email.com",
+    "address": "new city place country",
+    "query": "My garage door will not shut, help!"
+  },
+  {
+    "firstName": "Henry",
+    "lastName": "Ford",
+    "email": "HFord@email.com",
+    "address": "real city place America",
+    "query": "I need a lot of garage doors for all my cars."
+  },
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "fake@email.com",
+    "address": "Fake Street USA",
+    "query": "I wanted to make a new request for a different door!"
+  }
 ]
