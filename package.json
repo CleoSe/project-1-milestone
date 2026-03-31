@@ -2,7 +2,9 @@
   "dependencies": {
     "dotenv": "^17.2.3",
     "ejs": "^4.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.7",
+    "mongoose": "^9.3.3"
   },
   "name": "project-1-milestone",
   "version": "1.0.0",

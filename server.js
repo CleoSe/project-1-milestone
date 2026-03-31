@@ -3,6 +3,9 @@ const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
 const dataPath = path.join(__dirname, 'data.json');
+const mongoose = require("mongoose");
+const expressHandlebars = require('express-handlebars');
+
 
 const app = express();
 dotenv.config();
@@ -15,8 +18,19 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.set('view engine', 'ejs');
+app.engine('.hbs', expressHandlebars.engine({extname: '.hbs', defaultLayout: false}));
+app.set('view engine', '.hbs');
 
+mongoose.connect(process.env.MONGO_URL);
+
+const submission = mongoose.model('submission', {
+    firstName: String,
+    lastName: String,
+    email: String,
+    address: String,
+    query: String,
+    isCompleted: { type: Boolean, default: false } 
+});
 
 // home route
 app.get("/", (req, res) => {
@@ -49,33 +63,36 @@ app.use((req, res) => {
 // setup server
 
 
-app.post('/submit-form', (req, res) => {
-    const newEntry = req.body; 
-
-    fs.readFile(dataPath, 'utf8', (err, data) => {
-        if (err) {
-            console.error("Error reading file:", err);
-            return res.status(500).send("Server Error");
-        }
-
-        const entries = JSON.parse(data);
-
-        entries.push(newEntry);
-
-        fs.writeFile(dataPath, JSON.stringify(entries, null, 2), (err) => {
-            if (err) return res.status(500).send("Error saving data");
-            
-            res.redirect('/view-data');
-        });
-    });
+app.post('/submit-form', async (req, res) => {
+    const { firstName, lastName, email, query } = req.body;
+    if (!firstName?.trim() || !email?.trim() || !query?.trim()) {
+        return res.status(400).send("Form submission failed: Required fields are missing.");
+    }
+    try {
+        await new submission(req.body).save();
+        res.redirect('/view-data');
+    } catch (err) {
+        res.status(500).send("Database Error");
+    }
 });
 
-app.get('/view-data', (req, res) => {
-    fs.readFile(dataPath, 'utf8', (err, data) => {
-        const entries = JSON.parse(data);
-        
-        res.render('display', { entries: entries });
-    });
+app.get('/view-data', async (req, res) => {
+    const data = await submission.find().lean();
+    res.render('display', {entries: data});
+});
+
+app.post('/delete/:id', async (req, res) => {
+    await submission.findByIdAndDelete(req.params.id);
+    res.redirect('/view-data');
+});
+
+app.post('/update/:id', async (req, res) => {
+    try {
+        await submission.findByIdAndUpdate(req.params.id, { isCompleted: true });
+        res.redirect('/view-data');
+    } catch (err) {
+        res.status(500).send("Update Failed");
+    }
 });
 
 app.listen(HTTP_PORT, () => {
