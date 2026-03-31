@@ -23,7 +23,7 @@ app.set('view engine', '.hbs');
 
 mongoose.connect(process.env.MONGO_URL);
 
-const submission = mongoose.model('submission', {
+const submissionSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     email: String,
@@ -31,6 +31,9 @@ const submission = mongoose.model('submission', {
     query: String,
     isCompleted: { type: Boolean, default: false } 
 });
+
+const submission = mongoose.model('submission', submissionSchema);
+
 
 // home route
 app.get("/", (req, res) => {
