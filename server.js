@@ -67,15 +67,20 @@ app.use((req, res) => {
 
 
 app.post('/submit-form', async (req, res) => {
-    const { firstName, lastName, email, query } = req.body;
-    if (!firstName?.trim() || !email?.trim() || !query?.trim()) {
-        return res.status(400).send("Form submission failed: Required fields are missing.");
+    const {firstName, email, query} = req.body;
+
+    if(!firstName?.trim() || !email?.trim() || !query?.trim()) {
+      return res.redirect(req.get('referer') || '/');
     }
-    try {
-        await new submission(req.body).save();
-        res.redirect('/view-data');
-    } catch (err) {
-        res.status(500).send("Database Error");
+
+    try{
+      const newEntry = new submission(req.body);
+      await newEntry.save();
+      res.redirect('/view-data');
+    }
+    catch (err){
+      console.error("Database Save Error: ", err);
+      res.status(500).send("Database Error");
     }
 });
 
