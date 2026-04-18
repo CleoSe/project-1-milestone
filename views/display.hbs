@@ -35,21 +35,14 @@
                     <td>{{query}}</td>
                     <td>
                         <div class="d-flex align-items-center gap-2">
-                            
-                            {{#if isCompleted}}
-                                <i class="bi bi-check-circle-fill text-success" style="font-size: 1.2rem;" title="Completed"></i>
-                            {{/if}}
-
+                            <form action="/toggle-status/{{_id}}" method="POST" style="margin:0;">
+                                <button type="submit" class="btn {{#if isCompleted}}btn-success{{else}}btn-outline-secondary{{/if}} btn-sm">
+                                    {{#if isCompleted}}<i class="bi bi-check-circle"></i> Completed{{else}}Mark Done{{/if}}
+                                </button>
+                            </form>
                             <form action="/delete/{{_id}}" method="POST" style="margin:0;">
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             </form>
-
-                            {{#unless isCompleted}}
-                                <form action="/update/{{_id}}" method="POST" style="margin:0;">
-                                    <button type="submit" class="btn btn-warning btn-sm">Mark Completed</button>
-                                </form>
-                            {{/unless}}
-
                         </div>
                     </td>
                 </tr>
