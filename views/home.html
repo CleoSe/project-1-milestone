@@ -46,10 +46,10 @@
 
         <div>
             <!--Contact Us Button-->
-            <div class="container d-flex flex-column align-items-end" style="position: relative;">
-                <button type="button" id="formButton" class="btn custom-btn rounded-pill shadow-sm border position-relative text-center me-button" style= "background-color: grey; color: black;" onclick=showContact()>
-                    <i id="arrow" class="bi bi-triangle-fill me-2 rotate-90"></i>Contact Us!
-                </button>
+            <div class="container d-flex flex-column align-items-end mt-3" style="position: relative; z-index: 1050;">
+            <button type="button" id="formButton" class="btn custom-btn rounded-pill shadow-sm border text-center me-button" style="background-color: grey; color: black;" onclick="showContact()">
+                <i id="arrow" class="bi bi-triangle-fill me-2 rotate-90"></i>Contact Us!
+            </button>
     
             <div id="contactForm" class="shadow-lg mt-5 ms-1">
                 <form action = "/submit-form" method = "POST" enctype="application/x-www-form-urlencoded">
@@ -78,7 +78,7 @@
 
         </div>
         <!--Reviews Div-->
-        <div id = "reviewsDiv" class = "container d-flex flex-column position-relative" style = "width: 500px; height: 150px; background-color: maroon;">
+        <div id = "reviewsDiv" class = "container d-flex flex-column position-relative" style = "width: 500px; height: 150px; background-color: #ad313e;">
             <p class = "mx-auto text-center fs-5" style = "color: white; ">Reviews</p>
             <div class = "d-flex align-items-center">
                 <p id = "reviews" class = "p-flex flex-grow-1 mb-0 text-center" style="color: white;"></p>
