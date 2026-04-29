@@ -225,3 +225,21 @@ header img:hover {
 header .col-md-8 {
     padding-left: 0;
 }
+
+/* Ensure the body takes up at least the full height of the screen */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* This allows the main content area to grow and push the footer down */
+main, .container.my-5 {
+    flex: 1 0 auto;
+}
+
+/* Keeps the footer at the bottom */
+footer {
+    flex-shrink: 0;
+}

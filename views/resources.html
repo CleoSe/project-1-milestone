@@ -45,11 +45,6 @@
             </div>
         </nav>
 
-        <div class="container d-flex flex-column align-items-end mt-3" style="position: relative; z-index: 1050;">
-            <button type="button" id="formButton" class="btn custom-btn rounded-pill shadow-sm border text-center me-button" style="background-color: grey; color: black;" onclick="showContact()">
-                <i id="arrow" class="bi bi-triangle-fill me-2 rotate-90"></i>Contact Us!
-            </button>
-
             <div id="contactForm" class="shadow-lg mt-2 ms-1">
                 <form action="/submit-form" method="POST" enctype="application/x-www-form-urlencoded">
                     <input type="text" name="firstName" class="form-control mb-1" placeholder="First Name*" required>
@@ -119,8 +114,15 @@
             </div>
         </div>
 
-        <footer class="mt-5 border-top border-4 border-danger py-5 bg-white">
-            <div class="container">
+        <div class="text-center mt-5">
+            <div class="p-5 rounded bg-dark text-white">
+                <h3>Need help with your garage door?</h3>
+                <a href="/contact" class="btn btn-danger btn-lg mt-3 text-white">Contact Us Today</a>
+            </div>
+        </div>
+
+        <footer class="mt-5 border-top border-4 border-danger py-5 bg-white w-100">
+            <div class="container-fluid px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
                         <a href="/home">

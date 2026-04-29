@@ -176,6 +176,10 @@ app.post('/toggle-status/:id', async (req, res) => {
     }
 });
 
+app.get("/review", (req, res) => {
+  res.redirect("https://www.google.com/search?client=firefox-b-1-d&hs=3Knp&sca_esv=e49a19319df6f3e9&biw=1280&bih=587&sxsrf=ANbL-n7mPhLz_ucB2RKAnyk-_VPCUNwHIA:1777428497117&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYKkwHfOj3MbFNveJnjFM7k0-UxBg-rZuZ-jeit8CnGuHiZ_WO2c7C9a4xskU6RHj87weUmMXuUjJV61Py28-97sWvzWaieQ_VNwEfhy59iG3kQYHg%3D%3D&q=S+%26+L+Garage+Door+Reviews&sa=X&ved=2ahUKEwi1wbyR_ZGUAxWnlSsGHf-MOhIQ0bkNegQIHxAF");
+});
+
 app.listen(HTTP_PORT, () => {
   console.log(`App listening on port: ${HTTP_PORT}`);
 });
